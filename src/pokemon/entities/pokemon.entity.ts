@@ -1,6 +1,8 @@
+import { Injectable } from "@nestjs/common";
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import {Document} from "mongoose";
 
+@Injectable()
 @Schema()
 export class Pokemon extends Document {
 
@@ -8,12 +10,14 @@ export class Pokemon extends Document {
     @Prop({
         unique: true,
         index : true,
+        required: true,
     })
     name: string;
 
     @Prop({
         unique: true,
         index : true,
+        required: true,
     })
     no: number;
 

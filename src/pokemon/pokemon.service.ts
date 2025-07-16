@@ -5,6 +5,7 @@ import { Pokemon } from './entities/pokemon.entity';
 
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
 import { UpdatePokemonDto } from './dto/update-pokemon.dto';
+import { skip } from 'rxjs';
 
 @Injectable()
 export class PokemonService {
@@ -28,7 +29,9 @@ export class PokemonService {
   }
 
   findAll() {
-    return `This action returns all pokemon`;
+    return this.pokemonModel.find()
+    .limit(5)
+    .skip(5)
   }
 
   async findOne(term: string) {
