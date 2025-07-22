@@ -3,14 +3,12 @@ import { SeedService } from './seed.service';
 
 @Controller('seed')
 export class SeedController {
-  
-  constructor(
-    private readonly seedService: SeedService
-  ) {}
+
+  constructor(private readonly seedService: SeedService) {}
 
   @Get()
-  executeSEED() {
+  executeSeed() {
     return this.seedService.executeSeed();
   }
-   
+
 }
